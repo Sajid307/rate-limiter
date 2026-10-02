@@ -1,7 +1,7 @@
 package com.sd.rate_limiter.controller;
 
 import com.sd.rate_limiter.service.RateLimiterService;
-import org.apache.catalina.util.RateLimiter;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +23,13 @@ public class RateLimiterController {
 
     @GetMapping("/getTokens/{username}")
     public ResponseEntity<Integer> getTokens(@PathVariable String username) {
-        rateLimiterService.addTokensForUser();
         return ResponseEntity.ok(rateLimiterService.getTokens(username));
+    }
+
+    @GetMapping("/allowRequest/{userId}")
+    public ResponseEntity<?> allowRequest(@PathVariable long userId) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(rateLimiterService.allowRequests(userId));
     }
 }
