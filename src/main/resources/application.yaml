@@ -1,3 +1,7 @@
 spring:
   application:
     name: rate-limiter
+
+tokens:
+  max_capacity: 10
+  refillTokenPerSec: 1
