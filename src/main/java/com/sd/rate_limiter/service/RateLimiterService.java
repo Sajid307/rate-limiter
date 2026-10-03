@@ -1,12 +1,12 @@
 package com.sd.rate_limiter.service;
 
-import com.sd.rate_limiter.AllowRequestDTO;
+import com.sd.rate_limiter.dto.AllowRequestDTO;
 
 public interface RateLimiterService {
 
-    Integer getTokens(String user);
+    AllowRequestDTO getTokens(String user);
 
     void addTokens(String user);
 
-    AllowRequestDTO allowRequests(long request);
+    AllowRequestDTO allowRequests(String request);
 }
