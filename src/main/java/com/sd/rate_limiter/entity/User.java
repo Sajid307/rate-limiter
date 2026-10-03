@@ -2,19 +2,19 @@ package com.sd.rate_limiter.entity;
 
 public class User {
 
-    private long userId;
+    private String userId;
     private String userName;
 
-    public User(long userId, String userName) {
+    public User(String userId, String userName) {
         this.userId = userId;
         this.userName = userName;
     }
 
-    public long getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
