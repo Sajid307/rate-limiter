@@ -5,3 +5,8 @@ spring:
 tokens:
   max_capacity: 10
   refillTokenPerSec: 1
+
+leakyBucket:
+  max_capacity: 10
+  requestPerSecond: 2
+
