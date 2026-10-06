@@ -94,3 +94,4 @@ The implementation has been validated against a comprehensive test suite coverin
 -   **Distributed Rate Limiting:** To address the single-instance limitation, the state could be moved to a centralized, external store like **Redis** or **Hazelcast**. Atomic operations (e.g., Redis Lua scripts) would be required to maintain correctness.
 -   **Bucket Eviction Policy:** To manage memory growth, an eviction policy could be implemented. For example, using a cache like **Caffeine** or **Guava Cache** to automatically remove buckets for users who have been inactive for a certain period.
 -   **Dynamic Configuration:** Expose endpoints or use a configuration server to allow administrators to change rate-limiting parameters (e.g., `capacity`, `refillRate`) at runtime without needing to restart the application.
+-   **Idempotency:** how to handle idempotent request 
